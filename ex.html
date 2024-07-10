@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Bullet Camera</title>
+    <link rel="stylesheet" href="sass/fingertips.css">
+
+</head>
+
+<body>
+    <div class="fingertips_mainbox">
+
+   
+        <div class="image-container">
+             <img src="images/fingertips/fingertips1.png" alt="Image 1" class="image image1 ">
+            <img src="images/fingertips/fingertips2.png" alt="Image 2" class="image image2 ">
+            <img src="images/fingertips/fingertips3.png" alt="Image 3" class="image image3 ">
+    </div>
+    </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+<script>
+       $(document).ready(function() {
+    let fingertip = $('.image');
+    let index = 0;
+
+    function animateImagesFingertip() {
+        let currentIndex = index;
+        let nextIndex = (index + 1) % fingertip.length;
+        let nextNextIndex = (index + 2) % fingertip.length;
+
+        // Move current image down
+        $(fingertip[currentIndex]).removeClass('show').addClass('move-down');
+
+        // Move next image to show position
+        $(fingertip[nextIndex]).removeClass('hidden').addClass('show');
+
+        // Move next next image to hidden position
+        $(fingertip[nextNextIndex]).removeClass('move-down').addClass('hidden');
+
+        // Update index
+        index = nextIndex;
+
+        // Set a timeout for the next animation step
+        setTimeout(animateImagesFingertip, 4500); 
+    }
+
+    // Initialize the positions
+    fingertip.addClass('show');
+    $(fingertip[0]).addClass('move-down');
+    $(fingertip[1]).addClass('show');
+    $(fingertip[2]).addClass('hidden');
+
+    // Start the animation
+    setTimeout(animateImagesFingertip, 1000); 
+});
+
+</script>
+</body>
+
+</html>

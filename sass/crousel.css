@@ -1,0 +1,152 @@
+
+
+
+
+.watchdog {
+  height: 100%;
+  width: 100%;
+  .col-md-4 {
+    padding: 10px;
+  }
+
+
+ .card {
+  position: relative;
+  background: transparent;
+  border: 0;
+}
+
+ .card img {
+  width: 100%;
+  height: 100%;
+}
+
+ .carousel-control-prev,
+ .carousel-control-next {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #4B4B4B;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  top: unset;
+  bottom: -28px;
+}
+
+ .carousel-control-prev {
+  left: 47%;
+  border: 1px solid #006CBB;
+}
+
+ .carousel-control-next {
+  right: 47.2%;
+}
+
+
+
+
+
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+/* medium and up screens */
+@media screen and (min-width: 768px) {
+
+  .carousel-inner .carousel-item-end.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(33.3%);
+    -webkit-transform: translateX(33.3%);
+    -moz-transform: translateX(33.3%);
+    -ms-transform: translateX(33.3%);
+    -o-transform: translateX(33.3%);
+  }
+
+  .carousel-inner .carousel-item-start.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-33.3%);
+    -webkit-transform: translateX(-33.3%);
+    -moz-transform: translateX(-33.3%);
+    -ms-transform: translateX(-33.3%);
+    -o-transform: translateX(-33.3%);
+  }
+
+  
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start {
+  transform: translateX(0);
+}
+
+/*# sourceMappingURL=crousel.css.map */
+
+
+
+@media screen and (max-width: 767px) {
+  .carousel-inner .carousel-item>div {
+    display: none;
+  }
+
+  .carousel-inner .carousel-item>div:first-child {
+    display: block;
+  }
+}
+}
+
+.swipe-slide-div {
+  display: flex;
+  overflow: visible;
+  max-width: 100%;
+  position: relative;
+  justify-content: center;
+  padding: 11px;
+
+  .swipe-slide {
+    backface-visibility: hidden;
+    transform: translate(0px, 0px);
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    text-align: center;
+  }
+
+  .swipe-slide>* {
+    display: inline-block !important;
+    vertical-align: top;
+    white-space: normal;
+    text-align: left;
+    margin: 0 7px;
+  }
+
+  .swipe-slide> :last-child {
+    margin-right: 16px;
+  }
+
+  .swipe-slide> :first-child {
+    margin-left: 16px;
+  }
+
+  .swipe-slide {
+    scrollbar-width: none;
+  }
+
+  .swipe-slide::-webkit-scrollbar {
+    /* This is the magic bit for WebKit */
+    display: none;
+  }
+
+  &.swipe-slide-div {
+    padding: 0px;
+  }
+  .container.crousel {
+    scrollbar-color: transparent transparent;
+    /* thumb and track color */
+    scrollbar-width: 0px;
+  }
+}
